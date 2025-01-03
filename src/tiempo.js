@@ -112,3 +112,19 @@ function procesaCodigoTiempo(codigoTiempo) {
       console.log("❓ Código de tiempo no reconocido");
   }
 }
+
+// Mostramos la información procesada
+function muestraInformacionMeteo(temperatura, velocidadViento, direccionViento, codigoTiempo) {
+  console.log(`Temperatura: ${temperatura}`);
+  console.log(`Velocidad del viento: ${velocidadViento}`);
+  console.log(`Dirección del viento: ${direccionViento}`);
+  procesaCodigoTiempo(codigoTiempo);
+}
+
+
+muestraInformacionMeteo(
+  temperatura,
+  velocidadViento,
+  direccionViento,
+  codigoTiempo
+);

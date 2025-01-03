@@ -14,3 +14,8 @@ const obtenInformacionMeteo = async (latitud, longitud) => {
 
 var respuesta = await obtenInformacionMeteo(teisLatitud, teisLongitud);
 
+// Procesamiento de datos meteorológicos
+const temperatura = `${respuesta.current_weather.temperature} ${respuesta.current_weather_units.temperature}`;
+const velocidadViento = `${respuesta.current_weather.windspeed} ${respuesta.current_weather_units.windspeed}`;
+const direccionVientoGrados = respuesta.current_weather.winddirection;
+const codigoTiempo = respuesta.current_weather.weathercode;

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils.js</title>
+    <title>Code coverage report for api.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> utils.js</h1>
+        <h1><a href="index.html">All files</a> api.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/18</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/32</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -71,34 +71,22 @@
 <a name='L6'></a><a href='#L6'>6</a>
 <a name='L7'></a><a href='#L7'>7</a>
 <a name='L8'></a><a href='#L8'>8</a>
-<a name='L9'></a><a href='#L9'>9</a>
-<a name='L10'></a><a href='#L10'>10</a>
-<a name='L11'></a><a href='#L11'>11</a>
-<a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L9'></a><a href='#L9'>9</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function procesaDireccionViento(direccionVientoGrados) {
-  const grados = Number(direccionVientoGrados);
-  if (grados &gt;= 337.5 || grados &lt; 22.5) return "Norte";
-  if (grados &gt;= 22.5 &amp;&amp; grados &lt; 67.5) return "Noreste";
-  if (grados &gt;= 67.5 &amp;&amp; grados &lt; 112.5) return "Este";
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (grados &gt;= 112.5 &amp;&amp; grados &lt; 157.5) <span class="cstat-no" title="statement not covered" >return "Sureste";</span>
-  if (grados &gt;= 157.5 &amp;&amp; grados &lt; 202.5) return "Sur";
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (grados &gt;= 202.5 &amp;&amp; grados &lt; 247.5) return "Suroeste";
-<span class="cstat-no" title="statement not covered" >  if (grados &gt;= 247.5 &amp;&amp; grados &lt; 292.5) <span class="cstat-no" title="statement not covered" >return "Oeste";</span></span>
-<span class="cstat-no" title="statement not covered" >  if (grados &gt;= 292.5 &amp;&amp; grados &lt; 337.5) <span class="cstat-no" title="statement not covered" >return "Noroeste";</span></span>
-<span class="cstat-no" title="statement not covered" >  return "Desconocido";</span>
-}
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import fetch from "node-fetch";
+&nbsp;
+export const obtenInformacionMeteo = async (latitud, longitud) =&gt; {
+  const apiURL = `https://api.open-meteo.com/v1/forecast?latitude=${latitud}&amp;longitude=${longitud}&amp;current_weather=true`;
+  const respuestaAPI = await fetch(apiURL);
+  const respuestaAPIenJSON = await respuestaAPI.json();
+  return respuestaAPIenJSON;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

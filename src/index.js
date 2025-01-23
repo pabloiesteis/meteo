@@ -25,6 +25,6 @@ const teisLongitud = -8.683;
       codigoTiempo
     );
   } catch (error) {
-    console.error("Error al obtener la información meteorológica:", error);
+    console.error("Error al obtener la información meteorológica: ", error);
   }
 })();
